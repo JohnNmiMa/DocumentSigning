@@ -3,12 +3,10 @@
 	<head>
 		<title>Doc Signing</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
-		<!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- build:css ./../static/combined.css -->
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Muli">
-		<link type="text/css" rel="stylesheet" href="reset.css">
+		<link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<link type="text/css" rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="main.css">
 		<!-- endbuild -->
@@ -25,28 +23,27 @@
                     <div class="mobile-menu">
                         <ul>
                             <li>
-                                <a href="#" target="_blank">Example Link</a>
+								<a href="https://github.com/jettagozoom/DocumentSigning" target="_blank">GitHub</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <ul class="desktop-links">
-					<li class="githubButton" tooltip title="Repos" placement="bottom" delay="500">
-						<a href="https://github.com/jettagozoom" target="_blank">
+					<li class="githubButton" tooltip title="GitHub Repo" placement="bottom" delay="500">
+						<a href="https://github.com/jettagozoom/DocumentSigning" target="_blank">
                             <i class="fa fa-github"></i></a></li>
 				</ul>
 			</div>
 			<section class="container">
 				<div class="navigator">
-					<a class="name" href=""
-					   tooltip title="Click here for additional info" placement="bottom" delay="500">Document<span>Signing</span></a>
+					<a class="name" href="" placement="bottom" delay="500">Document<span>Signing</span></a>
 					<ul class="menu" >
 						<li id="adminbtn" ng-class="{'selected': selectedPage === 'admin'}">
 							<a href="#/work">Admin</a></li>
-						<li id="docusignbtn"  ng-class="{'selected': selectedPage === 'DocuSign'}">
-							<a href="#/experience">DocuSign</a></li>
-						<li id="echobtn" ng-class="{'selected': selectedPage === 'EchoSign'}">
-							<a href="#/skills">EchoSign</a></li>
+						<li id="docusignbtn"  ng-class="{'selected': selectedPage === 'docusign'}">
+							<a href="#/docusign">DocuSign</a></li>
+						<li id="echobtn" ng-class="{'selected': selectedPage === 'echosign'}">
+							<a href="#/echosign">EchoSign</a></li>
 					</ul>
 				</div>
 				<div class="browserType"
@@ -55,17 +52,17 @@
 					 ng-if="showSummaries"><span class="isMobile">{{isMobileDeviceUA?"Is Mobile using userAgent str":"Is not Mobile using userAgent str"}}</span>: {{mobileDeviceUAStr}}</div>
 			</section>
 		</header>
-		<!--<div class="dude" ng-class="headerPic()"></div>-->
 
 		<!--Use this one to enable animations-->
-        <div ng-view class="theview fadeInDown fadeOutDown"></div>
+        <!--<div ng-view class="theview fadeInDown fadeOutDown"></div>-->
 		<!--Use this one to disable animations-->
-		<!--<div ng-view class="theview"></div>-->
+		<div ng-view class="theview"></div>
 
         <div>
             <!-- build:js ./../static/combined.js -->
             <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
             <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+			<script type="text/javascript" src="bower_components/lodash/dist/lodash.js"></script>
             <script type="text/javascript" src="bower_components/angular/angular.js"></script>
             <script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
             <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
@@ -73,6 +70,9 @@
             <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
             <script type="text/javascript" src="app.js"></script>
             <script type="text/javascript" src="views/admin/admin.js"></script>
+			<script type="text/javascript" src="views/docusign/docusign.js"></script>
+			<script type="text/javascript" src="views/docusign/docusignLib.js"></script>
+			<script type="text/javascript" src="common/adminService.js"></script>
             <!-- endbuild -->
         </div>
 	</body>

@@ -4,7 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 header {
-  font-size: 1.6rem;
+  font-size: 2rem;
   /*margin-bottom:40px;*/
 }
 .top {
@@ -19,7 +19,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    height: 40px;
     background-color: #41b7d8;
     margin-bottom: 10px;
     z-index: 100010;
@@ -31,7 +31,7 @@ header {
     height: 20px;
     top: 0;
     bottom: 0;
-    right: 5px;
+    right: 10px;
     border: 7px solid transparent;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -57,9 +57,6 @@ header {
   }
   .mobile-links.expand .hamburger span {
     background: rgba(255, 255, 255, 0.6);
-  }
-  .mobile-links .hamburger span:first-of-type {
-    margin-top: 0;
   }
   .mobile-links .hamburger span:last-of-type {
     margin-bottom: 0;
@@ -93,7 +90,7 @@ header {
     color: white;
   }
 }
-@media screen and (min-width: 737px) {
+@media screen and (min-width: 768px) {
   .mobile-links {
     display: none;
   }
@@ -103,6 +100,7 @@ header {
   .top .desktop-links {
     float: right;
     padding-top: 10px;
+    padding: 10px 10px 0 0;
   }
   .top .desktop-links li {
     display: inline-block;
@@ -118,37 +116,17 @@ header {
     color: #444;
   }
   .top .desktop-links li a i {
-    font-size: 1.4em;
+    font-size: 2.5em;
     opacity: 0.3;
   }
   .top .desktop-links li a i:hover,
   .top .desktop-links li a i:focus,
   .top .desktop-links li a i:active {
-    font-size: 1.6em;
     opacity: 1;
     color: #41b7d8;
   }
   .top .desktop-links li.resumeButton {
     margin-right: 30px;
-  }
-}
-.container {
-  /*min-width:430px;*/
-  height: 100%;
-}
-@media screen and (min-width: 0px) {
-  .container {
-    /*margin:0 auto 0 auto;*/
-    margin: 0 auto 2% auto;
-    max-width: 736px;
-  }
-}
-@media screen and (min-width: 737px) {
-  .container {
-    /*margin:0 5% 2% 5%;*/
-    /*margin:0 5% 0 5%;*/
-    margin: 0 10% 2% 10%;
-    max-width: 100%;
   }
 }
 .navigator {
@@ -158,18 +136,18 @@ header {
   margin: 45px 0 25px 0;
   border-bottom: 0;
 }
-.name {
+a.name {
   font-family: 'AvenirNext-UltraLight', Helvetica, sans-serif;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-transform: uppercase;
   text-decoration: none;
   color: inherit;
 }
-.name:hover {
+a.name:hover {
   color: #41b7d8;
 }
-.name span {
+a.name span {
   font-family: 'AvenirNext-DemiBold', Helvetica, sans-serif;
 }
 ul.menu {
@@ -211,8 +189,9 @@ ul.menu li.selected a {
   ul.menu {
     /*display:block;*/
     position: relative;
-    font-size: 0.55em;
+    font-size: 0.75em;
     font-weight: 700;
+    padding: 0;
   }
   ul.menu li {
     display: inline-block;
@@ -220,7 +199,7 @@ ul.menu li.selected a {
     vertical-align: middle;
   }
 }
-@media screen and (min-width: 737px) {
+@media screen and (min-width: 768px) {
   .navigator {
     /*margin: 45px 0 25px 0;*/
     position: relative;
@@ -234,7 +213,6 @@ ul.menu li.selected a {
     /*position:absolute;*/
     /*right:0;*/
     float: right;
-    font-size: 0.55em;
     font-weight: 700;
   }
   ul.menu li {
@@ -264,7 +242,7 @@ ul.menu li.selected a {
   position: relative;
   margin: 0 5px;
 }
-@media screen and (min-width: 737px) {
+@media screen and (min-width: 768px) {
   .theview {
     position: relative;
     margin: 0;
@@ -548,205 +526,26 @@ section .summary .patent a:visited {
     transform: none;
   }
 }
-/*
- * Views: admin, ...
- */
-#work.content .title {
-  padding: 10px 15px 10px 23px;
-  border-left: 7px solid #eee;
-  margin: 0 0 20px -30px;
-}
-#work.content .title a {
-  text-decoration: none;
-  color: inherit;
-}
-#work.content .title h2 {
-  font-size: 1.3em;
-  font-weight: 600;
-}
-#work.content .title h2 .job {
-  font-size: .7em;
-  font-style: italic;
-  font-weight: 400;
-}
-#work.content .title h4 {
-  font-size: .7em;
-  font-weight: 400;
-  color: #999;
-  font-style: italic;
-}
-#work.content .title.thinkful img {
-  width: 20px;
-}
-#work.content .title.hp img {
-  width: 20px;
-}
-#work.content .title.seismic img {
-  width: 20px;
-}
-section .grid {
-  overflow: hidden;
-  margin-bottom: 60px;
-}
-section .grid .proj {
+/* Views */
+#docusign.content {
   position: relative;
-  float: left;
-  overflow: hidden;
 }
-section .grid .proj:hover {
-  /*transition: height .3 ease in;*/
+.ds-api {
+  margin-top: 10px;
 }
-@media screen and (min-width: 0px) {
-  .proj {
-    width: 100%;
-  }
+.ds-api p {
+  margin-bottom: 0px;
 }
-@media screen and (min-width: 600px) {
-  .proj {
-    /*width:50%;*/
-    width: 47%;
-    border: 5px solid #fff;
-  }
+.response-output {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 400px;
 }
-@media screen and (min-width: 900px) {
-  .proj {
-    width: 33.33332%;
-    width: 31%;
-    border: 5px solid #fff;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .proj {
-    width: 25%;
-    width: 23%;
-    border: 5px solid #fff;
-  }
-}
-section .grid .proj .imgContainer {
-  position: relative;
-  z-index: 3;
-  /*Man, I struggled with this. Adding the padding makes it all work!*/
-  padding-bottom: 100%;
-}
-section .grid #somecode .imgContainer .image {
-  background-image: url('images/somecode.png');
-}
-section .grid #photobrowser .imgContainer .image {
-  background-image: url('images/photobrowser.jpg');
-}
-section .grid #countriescapitals .imgContainer .image {
-  background-image: url('images/countriescapitals.png');
-}
-section .grid #waitstaffcalc .imgContainer .image {
-  background-image: url('images/waitstaffcalc.png');
-}
-section .grid #calendardirective .imgContainer .image {
-  background-image: url('images/calendardirective.png');
-}
-section .grid #codemirrortextarea .imgContainer .image {
-  background-image: url('images/codemirrortextarea.png');
-}
-section .grid #ngmadlibs .imgContainer .image {
-  background-image: url('images/ngmadlibs.png');
-}
-section .grid #stockportfolio .imgContainer .image {
-  background-image: url('images/stockportfolio.png');
-}
-section .grid #quizalator .imgContainer .image {
-  background-image: url('images/quizalator.png');
-}
-section .grid #valentine .imgContainer .image {
-  background-image: url('images/valentine.png');
-}
-section .grid #pamsdoterra .imgContainer .image {
-  background-image: url('images/pamsdoterra.png');
-}
-section .grid #hotorcold .imgContainer .image {
-  background-image: url('images/hotorcold.png');
-}
-section .grid #tssignals .imgContainer .image {
-  background-image: url('images/37signalsclone.png');
-}
-section .grid #googleclone .imgContainer .image {
-  background-image: url('images/googleclone.png');
-}
-section .grid #rgs .imgContainer .image {
-  background-image: url('images/rgs.png');
-}
-section .grid #webos .imgContainer .image {
-  background-image: url('images/hpwebos.jpg');
-}
-section .grid #graphicsdevice .imgContainer .image {
-  background-image: url('images/visualizegraphics.jpg');
-}
-section .grid #spacer1 {
-  display: none;
-}
-@media screen and (min-width: 900px) {
-  section .grid #spacer1 {
-    display: block;
-  }
-}
-@media screen and (min-width: 1200px) {
-  section .grid #spacer1 {
-    display: none;
-  }
-}
-section .grid #x11 .imgContainer .image {
-  background-image: url('images/hpux-x11.png');
-}
-section .grid #seismicprocessing .imgContainer .image {
-  background-image: url('images/seismicdata.jpg');
-}
-section .grid #seismicacquisition .imgContainer .image {
-  background-image: url('images/seismicacquisition.jpg');
-}
-section .grid .proj .image {
-  position: absolute;
-  /* Man, discovering how to remove the border around the background
-             * images was tough. The following two lines did the trick */
-  top: -1%;
-  left: -1%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* You also have to make the image slightly larger to
-             * remove the right and bottom image border. */
-  width: 102%;
-  height: 102%;
-  -webkit-transition-property: background-position background-size;
-  -webkit-transition-duration: 0.25s;
-  -webkit-transition-timing-function: ease-out;
-  transition-property: background-position background-size;
-  transition-duration: 0.25s;
-  transition-timing-function: ease-out;
-}
-/* This is the overlay that lies on top of the image. By default it is shown as
-     * hidden, and becomes visible when hovered over.*/
-section .grid .proj a.overlay {
-  position: absolute;
-  z-index: 5;
-  text-decoration: none;
-  visibility: hidden;
-  background-color: rgba(0, 0, 0, 0);
-  -webkit-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
-}
-section .grid .proj a.overlay .description {
-  vertical-align: middle;
-  text-align: center;
-}
-section .grid .proj a.overlay .description h2 {
-  font-size: 0.9em;
-  line-height: 30px;
-  color: #fff;
-  -webkit-transition: font-size 0.2s ease-out;
-  transition: font-size 0.2s ease-out;
-}
-section .grid .proj a.overlay .description h4 {
-  font-size: 0,9em;
-  font-weight: 300;
-  line-height: 24px;
-  color: #ccc;
-  -webkit-transition: font-size 0.2s ease-out;
-  transition: font-size 0.2s ease-out;
+.response-output pre {
+  font-size: 10px;
+  background-color: white;
+  border: none;
 }

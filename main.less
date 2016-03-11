@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    font-size: 1.6rem;
+    font-size: 2rem;
     /*margin-bottom:40px;*/
 }
 
@@ -20,7 +20,7 @@ header {
         top:0;
         left:0;
         right:0;
-        height:50px;
+        height:40px;
         background-color: #41b7d8;
         margin-bottom:10px;
         z-index: 100010;
@@ -30,7 +30,7 @@ header {
         margin: auto;
         width:22px;
         height:20px;
-        top: 0; bottom: 0; right: 5px;
+        top: 0; bottom: 0; right: 10px;
         border: 7px solid transparent;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
@@ -55,7 +55,7 @@ header {
         z-index: 99;
     }
     .mobile-links.expand .hamburger span { background: rgba(255,255,255,0.6); }
-    .mobile-links .hamburger span:first-of-type { margin-top:0; }
+    //.mobile-links .hamburger span:first-of-type { margin-top:0; }
     .mobile-links .hamburger span:last-of-type { margin-bottom: 0; }
     .mobile-links .mobile-menu {
         display: none;
@@ -82,12 +82,13 @@ header {
         color:white;
     }
 }
-@media screen and (min-width: 737px) {
+@media screen and (min-width: 768px) {
     .mobile-links {display:none}
     .desktop-links {display:block}
     .top .desktop-links {
         float:right;
         padding-top:10px;
+        padding:10px 10px 0 0;
     }
     .top .desktop-links li {
         display:inline-block;
@@ -103,13 +104,12 @@ header {
         color:#444;
     }
     .top .desktop-links li a i {
-        font-size:1.4em;
+        font-size:2.5em;
         opacity: 0.3;
     }
     .top .desktop-links li a i:hover,
     .top .desktop-links li a i:focus,
     .top .desktop-links li a i:active {
-        font-size:1.6em;
         opacity: 1;
         color:#41b7d8;
     }
@@ -120,23 +120,19 @@ header {
 
 
 .container {
-    /*min-width:430px;*/
-    height:100%;
+    //height:100%;
 }
 @media screen and (min-width: 0px) {
-    .container {
-        /*margin:0 auto 0 auto;*/
-        margin:0 auto 2% auto;
-        max-width:736px;
-    }
+    //.container {
+        //margin:0 auto 2% auto;
+    //    max-width:767px;
+    //}
 }
-@media screen and (min-width: 737px) {
-    .container {
-        /*margin:0 5% 2% 5%;*/
-        /*margin:0 5% 0 5%;*/
-        margin:0 10% 2% 10%;
-        max-width:100%;
-    }
+@media screen and (min-width: 768px) {
+    //.container {
+        //margin:0 10% 2% 10%;
+        //max-width:100%;
+    //}
 }
 
 .navigator {
@@ -146,18 +142,18 @@ header {
     margin: 45px 0 25px 0;
     border-bottom: 0;
 }
-.name {
+a.name {
     font-family: 'AvenirNext-UltraLight', Helvetica, sans-serif;
     text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-transform: uppercase;
     text-decoration: none;
     color:inherit;
 }
-.name:hover {
+a.name:hover {
     color:#41b7d8;
 }
-.name span {
+a.name span {
     font-family: 'AvenirNext-DemiBold', Helvetica, sans-serif;
 }
 
@@ -200,8 +196,9 @@ ul.menu li.selected a {
     ul.menu {
         /*display:block;*/
         position:relative;
-        font-size:0.55em;
+        font-size:0.75em;
         font-weight:700;
+        padding:0;
     }
     ul.menu li {
         display:inline-block;
@@ -209,7 +206,7 @@ ul.menu li.selected a {
         vertical-align:middle;
     }
 }
-@media screen and (min-width: 737px) {
+@media screen and (min-width: 768px) {
     .navigator {
         /*margin: 45px 0 25px 0;*/
         position:relative;
@@ -224,7 +221,7 @@ ul.menu li.selected a {
         /*position:absolute;*/
         /*right:0;*/
         float:right;
-        font-size:0.55em;
+        //font-size:0.55em;
         font-weight:700;
     }
     ul.menu li {
@@ -256,7 +253,7 @@ ul.menu li.selected a {
     position: relative;
     margin:0 5px;
 }
-@media screen and (min-width: 737px) {
+@media screen and (min-width: 768px) {
     .theview {
         position: relative;
         margin:0;
@@ -547,10 +544,7 @@ section .summary .patent a:visited {
     }
 }
 
-/*
- * Views: admin, ...
- */
+/* Views */
 @import "views/admin/admin.less";
-//@import "views/experience/experience.less";
-//@import "views/skills/skills.less";
+@import "views/docusign/docusign.less";
 

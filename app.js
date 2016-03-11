@@ -1,4 +1,4 @@
-var portfolioApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ngTouch', 'ngAnimate'])
+var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ngTouch', 'ngAnimate'])
 
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when("/admin", {
@@ -7,6 +7,10 @@ var portfolioApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', '
     })
     .when("/", {
         redirectTo: "/admin"
+    })
+    .when("/docusign", {
+        templateUrl: "./views/docusign/docusign.html",
+        controller: 'DocuSignCtrl'
     })
     .otherwise({redirectTo: '/'});
 }])

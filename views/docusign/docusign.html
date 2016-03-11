@@ -1,0 +1,14 @@
+<section id="docusign" class="container content docusign-container">
+    <div class="ds-api util-api">
+        <p>API Utils</p>
+        <button class="btn" ng-click="getAccountInfo()">Account Info</button>
+        <button class="btn" ng-click="getTemplates()">Templates</button>
+    </div>
+    <div class="ds-api">
+        <p>Sign document without template</p>
+        <button class="btn" ng-click="login()">Login</button>
+    </div>
+    <div class="response-output">
+        <pre>{{response}}</pre>
+    </div>
+</section>
