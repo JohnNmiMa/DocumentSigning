@@ -1,106 +1,474 @@
 /* Less variables */
+.flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex .flex-none {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+.flex .flex-auto {
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+.flex .flex-one {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex .flex-two {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+.flex .flex-three {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+.flex .flex-four {
+  -webkit-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+}
+.flex .flex-shrink-zero {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.flex .flex-one-one-auto {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.flex .flex-one-zero-auto {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.flex .flex-zero-one-auto {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+.flex .flex-zero-zero-auto {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.flex .flexitem-left-main {
+  margin-right: auto;
+}
+.flex .flexitem-right-main {
+  margin-left: auto;
+}
+.flex .flexitem-left-cross {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+.flex .flexitem-right-cross {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+.flex .flexitem-center-cross {
+  -webkit-align-self: center;
+  align-self: center;
+}
+.flex .flexitem-baseline-cross {
+  -webkit-align-self: baseline;
+  align-self: baseline;
+}
+.flex .flexitem-stretch-cross {
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+.flex-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-row .flex-none {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+.flex-row .flex-auto {
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+.flex-row .flex-one {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex-row .flex-two {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+.flex-row .flex-three {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+.flex-row .flex-four {
+  -webkit-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+}
+.flex-row .flex-shrink-zero {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.flex-row .flex-one-one-auto {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.flex-row .flex-one-zero-auto {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.flex-row .flex-zero-one-auto {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+.flex-row .flex-zero-zero-auto {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.flex-row .flexitem-left-main {
+  margin-right: auto;
+}
+.flex-row .flexitem-right-main {
+  margin-left: auto;
+}
+.flex-row .flexitem-left-cross {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+.flex-row .flexitem-right-cross {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+.flex-row .flexitem-center-cross {
+  -webkit-align-self: center;
+  align-self: center;
+}
+.flex-row .flexitem-baseline-cross {
+  -webkit-align-self: baseline;
+  align-self: baseline;
+}
+.flex-row .flexitem-stretch-cross {
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+.flex-col {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-col .flex-none {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+.flex-col .flex-auto {
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+.flex-col .flex-one {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex-col .flex-two {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+.flex-col .flex-three {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+.flex-col .flex-four {
+  -webkit-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+}
+.flex-col .flex-shrink-zero {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.flex-col .flex-one-one-auto {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.flex-col .flex-one-zero-auto {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.flex-col .flex-zero-one-auto {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+.flex-col .flex-zero-zero-auto {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.flex-col .flexitem-left-main {
+  margin-right: auto;
+}
+.flex-col .flexitem-right-main {
+  margin-left: auto;
+}
+.flex-col .flexitem-left-cross {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+.flex-col .flexitem-right-cross {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+.flex-col .flexitem-center-cross {
+  -webkit-align-self: center;
+  align-self: center;
+}
+.flex-col .flexitem-baseline-cross {
+  -webkit-align-self: baseline;
+  align-self: baseline;
+}
+.flex-col .flexitem-stretch-cross {
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+.flex-wrap {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-left-main {
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.flex-right-main {
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.flex-center-main {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.flex-space-between-main {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.flex-space-around-main {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+.flex-center-cross {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flex-start-cross {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.flex-end-cross {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.flex-stretch-cross {
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+/* Needed for ui-bootstrap */
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
 body {
   font-family: 'AvenirNext-Regular', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 header {
   font-size: 2rem;
-  /*margin-bottom:40px;*/
 }
-.top {
-  height: 40px;
+header .top {
+  height: 50px;
+  padding: 0 20px;
+}
+header .top a.name {
+  font-family: 'AvenirNext-UltraLight', Helvetica, sans-serif;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+}
+header .top a.name:hover {
+  color: #41b7d8;
+}
+header .top a.name span {
+  font-family: 'AvenirNext-DemiBold', Helvetica, sans-serif;
+}
+header .navigator {
+  color: #444;
+  border-bottom: 0;
+}
+header .navigator ul.menu {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+header .navigator ul.menu li {
+  display: inline-block;
+  line-height: 35px;
+  vertical-align: middle;
+}
+header .navigator ul.menu li#workbtn,
+header .navigator ul.menu li#expbtn,
+header .navigator ul.menu li#skillsbtn,
+header .navigator ul.menu li#careersbtn {
+  padding: 0 6px;
+}
+header .navigator ul.menu li:first-child {
+  padding-right: 6px;
+}
+header .navigator ul.menu li:last-child {
+  padding-left: 6px;
+}
+header .navigator ul.menu li a {
+  color: inherit;
+  text-decoration: none;
+}
+header .navigator ul.menu li a:hover {
+  color: #41b7d8;
+}
+header .navigator ul.menu li.selected a {
+  color: #41b7d8;
 }
 @media screen and (min-width: 0px) {
-  .desktop-links {
+  .top {
+    position: relative;
+  }
+  .top .desktop-links {
     display: none;
   }
-  .mobile-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    background-color: #41b7d8;
-    margin-bottom: 10px;
+  .top .mobile-links {
     z-index: 100010;
   }
-  .mobile-links .hamburger {
-    position: absolute;
-    margin: auto;
-    width: 22px;
-    height: 20px;
-    top: 0;
-    bottom: 0;
-    right: 10px;
+  .top .mobile-links .hamburger {
     border: 7px solid transparent;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    padding: 5px 0px 0px 3px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    transition: all 0.15s ease-in;
+    transition: all 0.25s ease-in;
   }
-  .mobile-links .hamburger:focus {
+  .top .mobile-links .hamburger:focus {
     outline: none;
   }
-  .mobile-links.expand .hamburger {
-    background: rgba(47, 54, 66, 0.2);
-    transition: all 0.15s ease-out;
+  .top .mobile-links.expand .hamburger {
+    background: rgba(47, 54, 66, 0.6);
+    transition: all 0.25s ease-out;
   }
-  .mobile-links .hamburger span {
+  .top .mobile-links .hamburger span {
     display: block;
     width: 19px;
     height: 2px;
-    margin: 4px 0;
-    background: #ffffff;
+    margin: 2px 0;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 99;
   }
-  .mobile-links.expand .hamburger span {
-    background: rgba(255, 255, 255, 0.6);
+  .top .mobile-links.expand .hamburger span {
+    background: rgba(255, 255, 255, 0.8);
   }
-  .mobile-links .hamburger span:last-of-type {
+  .top .mobile-links .hamburger span:first-of-type {
+    margin-top: 2px;
+  }
+  .top .mobile-links .hamburger span:last-of-type {
     margin-bottom: 0;
   }
-  .mobile-links .mobile-menu {
+  .top .mobile-links .mobile-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 90%;
+    right: 20px;
     width: 50%;
-    background-color: #444;
+    max-width: 200px;
+    background-color: #777;
   }
-  .mobile-links.expand .mobile-menu {
+  .top .mobile-links.expand .mobile-menu {
     display: block !important;
   }
-  .mobile-links .mobile-menu ul {
+  .top .mobile-links .mobile-menu ul {
     list-style-type: none;
     text-align: left;
     padding-left: 20px;
     color: white;
     font-size: 14px;
   }
-  .mobile-links .mobile-menu ul li {
+  .top .mobile-links .mobile-menu ul li {
     margin-bottom: 20px;
   }
-  .mobile-links .mobile-menu ul li:first-child {
+  .top .mobile-links .mobile-menu ul li:first-child {
     margin-top: 20px;
   }
-  .mobile-links .mobile-menu ul li a {
+  .top .mobile-links .mobile-menu ul li a {
     text-decoration: none;
     color: white;
   }
+  .navigator {
+    text-align: center;
+  }
+  .navigator ul.menu {
+    position: relative;
+    font-size: 0.75em;
+    padding: 0;
+  }
 }
 @media screen and (min-width: 768px) {
-  .mobile-links {
+  .top .mobile-links {
     display: none;
   }
-  .desktop-links {
+  .top .desktop-links {
     display: block;
   }
   .top .desktop-links {
-    float: right;
-    padding-top: 10px;
-    padding: 10px 10px 0 0;
+    margin-bottom: 0;
   }
   .top .desktop-links li {
     display: inline-block;
@@ -128,133 +496,38 @@ header {
   .top .desktop-links li.resumeButton {
     margin-right: 30px;
   }
-}
-.navigator {
-  color: #444;
-  height: 100%;
-  /*overflow: visible;*/
-  margin: 45px 0 25px 0;
-  border-bottom: 0;
-}
-a.name {
-  font-family: 'AvenirNext-UltraLight', Helvetica, sans-serif;
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
-  font-size: 1.5em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
-}
-a.name:hover {
-  color: #41b7d8;
-}
-a.name span {
-  font-family: 'AvenirNext-DemiBold', Helvetica, sans-serif;
-}
-ul.menu {
-  text-transform: uppercase;
-}
-ul.menu li {
-  line-height: 35px;
-}
-ul.menu li#workbtn,
-ul.menu li#expbtn,
-ul.menu li#skillsbtn,
-ul.menu li#careersbtn {
-  padding: 0 6px;
-}
-ul.menu li:first-child {
-  padding-right: 6px;
-}
-ul.menu li:last-child {
-  padding-left: 6px;
-}
-ul.menu li a {
-  color: inherit;
-  text-decoration: none;
-}
-ul.menu li a:hover {
-  color: #41b7d8;
-}
-ul.menu li.selected a {
-  color: #41b7d8;
-}
-@media screen and (min-width: 0px) {
   .navigator {
-    margin: 25px 0 0 0;
-    text-align: center;
-  }
-  .name {
-    /*vertical-align:middle;*/
-  }
-  ul.menu {
-    /*display:block;*/
-    position: relative;
-    font-size: 0.75em;
-    font-weight: 700;
-    padding: 0;
-  }
-  ul.menu li {
-    display: inline-block;
-    line-height: 35px;
-    vertical-align: middle;
-  }
-}
-@media screen and (min-width: 768px) {
-  .navigator {
-    /*margin: 45px 0 25px 0;*/
     position: relative;
     text-align: left;
   }
-  .name {
-    /*vertical-align:middle;*/
-  }
-  ul.menu {
-    /*display:inline-block;*/
-    /*position:absolute;*/
-    /*right:0;*/
+  .navigator ul.menu {
     float: right;
-    font-weight: 700;
-  }
-  ul.menu li {
-    display: inline-block;
-    line-height: 35px;
-    vertical-align: middle;
   }
 }
-.dude {
-  background-size: cover;
-  height: 200px;
-  margin-bottom: 40px;
-}
-.dude.bc {
-  background-image: url(images/bc.jpg);
-  background-position: 0 60%;
-}
-.dude.de-rosa {
-  background-image: url(images/de-rosa.jpg);
-  background-position: 0 60%;
-}
-.dude.downy {
-  background-image: url(images/downy.jpg);
-  background-position: 0 50%;
+@media screen and (min-width: 0px) {
+  .navigator {
+    text-align: center;
+  }
+  .navigator ul.menu {
+    position: relative;
+    font-size: 0.75em;
+    padding: 0;
+  }
 }
 .theview {
   position: relative;
-  margin: 0 5px;
 }
-@media screen and (min-width: 768px) {
-  .theview {
-    position: relative;
-    margin: 0;
-  }
-}
-.work-container,
-.experience-container,
-.skills-container {
+.admin-container,
+.docusign-container,
+.echosign-container {
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 0;
   left: 0;
+  border: 1px solid #ddd;
+  border-top: 0;
+  padding: 15px;
+  margin-bottom: 10px;
 }
 section .summary {
   margin-bottom: 20px;
@@ -536,9 +809,14 @@ section .summary .patent a:visited {
 .ds-api p {
   margin-bottom: 0px;
 }
+.ds-api button {
+  margin-bottom: 3px;
+}
+.ds-api.account-api {
+  margin-top: 0;
+}
 .response-output {
   margin-top: 20px;
-  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   overflow: auto;

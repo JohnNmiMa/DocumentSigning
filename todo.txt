@@ -1,0 +1,15 @@
+1) Create header and tabbed interface - DONE
+2) Create admin tab: - DONE
+    * Add form to input the DocuSign IntegratorKey, Username, and Password - DONE
+3) Create DocuSign tab: - DONE
+    * Create Account Setup buttons (Create Account, Select Account) - DONE
+    * Create Utils buttons (Login, Show Templates, Show Envelopes) - DONE
+    * Create buttons to create envelops to send letters to be signed - DONE
+4) Implement Utils buttons - DONE
+5) Implement Send Envelope Using Server Template - DONE
+6) Implement Account Setup buttons
+    * Implement Create Account (use form to gather Username and Password for new account)
+    * Implement Select Account (pick an account, and use it in future API calls)
+7) Implement Send Envelope Using Document
+
+8) Implement EchoSign tab

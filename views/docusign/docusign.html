@@ -1,14 +1,48 @@
-<section id="docusign" class="container content docusign-container">
+<div id="docusign" class="docusign-container">
+    <div class="ds-api account-api">
+        <p>Account Setup</p>
+        <button class="btn btn-default" ng-click="selectAccount()">Select Account</button>
+        <button class="btn btn-default" ng-click="createAccount()">Create Account</button>
+        <button class="btn btn-default" ng-click="getAccountInfo()">Account Info</button>
+    </div>
     <div class="ds-api util-api">
         <p>API Utils</p>
-        <button class="btn" ng-click="getAccountInfo()">Account Info</button>
-        <button class="btn" ng-click="getTemplates()">Templates</button>
+        <button class="btn btn-default" ng-click="login()">Login</button>
+        <button class="btn btn-default" ng-click="getTemplates()">Templates</button>
+        <button class="btn btn-default" ng-click="getEnvelopes()">Envelopes</button>
     </div>
     <div class="ds-api">
-        <p>Sign document without template</p>
-        <button class="btn" ng-click="login()">Login</button>
+        <p>Send envelopes with and without templates</p>
+        <button class="btn btn-default" ng-click="sendEnvelopeUsingJohnCoServerTemplate()">Send Envelope Using Server Template</button>
+        <button class="btn btn-default" ng-click="sendEnvelopeUsingNewTemplate()">Send Envelope Using New Template</button>
+        <button class="btn btn-default" ng-click="sendEnvelopeUsingWithDocument()">Send Envelope With Document</button>
+        <button class="btn btn-default" ng-click="createTemplate()">Create Template</button>
     </div>
-    <div class="response-output">
+    <div class="response-output" ng-show="response">
         <pre>{{response}}</pre>
     </div>
-</section>
+
+    <script type="text/ng-template" id="docusignModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Create DocuSign Account</h3>
+        </div>
+        <form ng-submit="submit()" name="docusignCreateAccountForm">
+            <div class="modal-body">
+                <div class="form-group">
+                    <!--<label for="username">Username</label>-->
+                    <input type="text" ng-model="data.username" class="form-control" id="username"
+                           placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <!--<label for="password">Password</label>-->
+                    <input type="password" ng-model="data.password" class="form-control" id="password"
+                           placeholder="Password" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="submit">Save</button>
+                <button class="btn" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </form>
+    </script>
+</div>

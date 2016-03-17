@@ -4,13 +4,14 @@ docSignApp
 
 .factory('DocuSignService', ['$http', '$q', 'AdminService', 'DOCUSIGN_DEMO_URL', function($http, $q, adminSvc, DOCUSIGN_DEMO_URL) {
 
-    var login_info = {};
+    var login_info = {},
+        ds_templates = {};
 
     var login = function() {
         var defer = $q.defer(),
             req = {
                 method: 'GET',
-                url: DOCUSIGN_DEMO_URL + "/login_information?api_password=true&include_account_id_guid=true&login_settings=all",
+                url: DOCUSIGN_DEMO_URL + "/login_information?api_password=true&include_account_id_guid=true",
                 headers: buildCredsHeader()
             };
 
@@ -29,41 +30,112 @@ docSignApp
         return defer.promise;
     };
 
-    var templates = function(loginInfo) {
+    var templates = function() {
         var defer = $q.defer(),
             req = {
                 method: 'GET',
-                url: loginInfo.loginAccounts[0].baseUrl + "/templates",
+                url: login_info.loginAccounts[0].baseUrl + "/templates",
                 headers: buildCredsHeader()
             };
 
         $http(req).then(function(data) {
-            defer.resolve(data);
+            ds_templates = data.data.envelopeTemplates;
+            defer.resolve(data.data);
         }, function(response) { defer.reject(response); });
 
         return defer.promise;
     };
 
-    var accounts = function(loginInfo) {
+    var createAccount = function() {
+    };
+
+    var accounts = function() {
         var defer = $q.defer(),
             req = {
                 method: 'GET',
-                url: loginInfo.loginAccounts[0].baseUrl,
+                url: login_info.loginAccounts[0].baseUrl,
                 headers: buildCredsHeader()
             };
 
         $http(req).then(function(data) {
-            defer.resolve(data);
+            defer.resolve(data.data);
         }, function(response) { defer.reject(response); });
+
+        return defer.promise;
+    };
+
+    var envelopes = function() {
+        var defer = $q.defer(),
+            req = {
+                method: 'GET',
+                url: login_info.loginAccounts[0].baseUrl + "/envelopes?from_date=01-01-1970",
+                headers: buildCredsHeader()
+            };
+
+        $http(req).then(function(data) {
+            defer.resolve(data.data);
+        }, function(response) { defer.reject(response); });
+
+        return defer.promise;
+    }
+
+    var envelopeUsingServerTemplate = function() {
+        var defer = $q.defer(),
+            req = {
+                method: 'POST',
+                url: login_info.loginAccounts[0].baseUrl + "/envelopes",
+                headers: buildCredsHeader(),
+                data: {
+                    "status":"sent",
+                    "emailBlurb":"Welcome to JohnCo. We are offering you a position at JohnCo, and are looking forwared to working with you. Please sign the enclosed IGR job offer letter.",
+                    "emailSubject": "JohnCo IGR Offer Letter - please read and sign!",
+                    "templateId": ds_templates[1].templateId,
+                    "templateRoles":[
+                        {
+                            "email":"johnmarksjr@gmail.com",
+                            "name":"James T Kirk",
+                            "roleName":"Signer 1",
+                            "tabs": {
+                                "signHereTabs": [{
+                                    "anchorString": "Sign here:",
+                                    "anchorXOffset": "10",
+                                    "anchorYOffset": "-22",
+                                    "anchorIgnoreIfNotPresent": "false",
+                                    "anchorUnits": "pixels"
+                                }],
+                                "dateSignedTabs": [{
+                                    "anchorString": "Date here:",
+                                    "anchorXOffset": "0",
+                                    "anchorYOffset": "-18",
+                                    "anchorIgnoreIfNotPresent": "false",
+                                    "anchorUnits": "pixels"
+                                }]
+                            }
+                        }
+                    ]
+                }
+            };
+
+        $http(req).then(function(data) {
+            defer.resolve(data.data);
+        }, function(response) {
+            defer.reject(response);
+        });
 
         return defer.promise;
     };
 
     var getAccountInfo = function() {
         return login().then(accounts);
-    }
+    };
     var getTemplates = function() {
         return login().then(templates);
+    };
+    var getEnvelopes = function() {
+        return login().then(envelopes);
+    };
+    var sendEnvelopeUsingJohnCoServerTemplate = function() {
+        return login().then(templates).then(envelopeUsingServerTemplate);
     };
 
     /***** Utils *****/
@@ -80,8 +152,8 @@ docSignApp
                 '</DocuSignCredentials>';
 
             header = {
-                'Accept': 'applcation/json',
-                'Content-Type': 'applcation/json',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
                 'X-DocuSign-Authentication': credsHeader
             }
         }
@@ -89,8 +161,14 @@ docSignApp
     }
 
     return {
+        /* DocuSign Util APIs */
         login: login,
+        createAccount: createAccount,
         getAccountInfo: getAccountInfo,
-        getTemplates: getTemplates
+        getTemplates: getTemplates,
+        getEnvelopes: getEnvelopes,
+
+        /* Envelope/Signing-request creation/sending */
+        sendEnvelopeUsingJohnCoServerTemplate: sendEnvelopeUsingJohnCoServerTemplate
     }
 }]);

@@ -1,7 +1,8 @@
-var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ngTouch', 'ngAnimate'])
+var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ngTouch', 'ngAnimate', 'ui.bootstrap'])
 
 .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when("/admin", {
+    $routeProvider
+    .when("/admin", {
         templateUrl: "./views/admin/admin.html",
         controller: 'AdminCtrl'
     })
@@ -15,7 +16,7 @@ var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ng
     .otherwise({redirectTo: '/'});
 }])
 
-.controller('main', ['$rootScope', '$scope', function ($rootScope, $scope) {
+.controller('main', ['$rootScope', '$scope', '$location', function ($rootScope, $scope, $location) {
     function init() {
     }
 
@@ -24,6 +25,13 @@ var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ng
         mobileLinks.classList.toggle('expand');
         $event.stopPropagation();
     };
+
+    $scope.adminView = function() {
+        $location.url('admin');
+    };
+    $scope.docusignView = function() {
+        $location.url('docusign');
+    }
 
     init();
 }])
