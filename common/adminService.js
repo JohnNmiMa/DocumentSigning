@@ -7,10 +7,16 @@ docSignApp.factory('AdminService', ['$window', function($window) {
         if (_.isEmpty(data)) return;
         $window.sessionStorage.setItem('AdminDocSignModel', JSON.stringify(angular.copy(data)));
     };
+    var setPassword = function(password) {
+        var model = getModel();
+        model.password = password;
+        setModel(model);
+    };
 
     return {
         // Model API
         getModel: getModel,
-        setModel: setModel
+        setModel: setModel,
+        setPassword: setPassword
     }
 }]);

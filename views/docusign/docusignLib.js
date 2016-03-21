@@ -20,6 +20,7 @@ docSignApp
         } else if (_.isEmpty(login_info)) {
             $http(req).then(function(data) {
                 login_info = data.data;
+                adminSvc.setPassword(login_info.apiPassword);
                 defer.resolve(data.data);
             }, function(response) { defer.reject(response); });
         } else {
