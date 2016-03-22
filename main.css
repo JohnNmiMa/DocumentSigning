@@ -517,6 +517,7 @@ header .navigator ul.menu li.selected a {
 .theview {
   position: relative;
 }
+.usage-container,
 .admin-container,
 .docusign-container,
 .echosign-container {

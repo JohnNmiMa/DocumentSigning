@@ -88,12 +88,12 @@ docSignApp
                 headers: buildCredsHeader(),
                 data: {
                     "status":"sent",
-                    "emailBlurb":"Welcome to JohnCo. We are offering you a position at JohnCo, and are looking forwared to working with you. Please sign the enclosed IGR job offer letter.",
+                    "emailBlurb":"Welcome to JohnCo. We are offering you a position at JohnCo, and are looking forward to working with you. Please sign the enclosed IGR job offer letter.",
                     "emailSubject": "JohnCo IGR Offer Letter - please read and sign!",
                     "templateId": ds_templates[1].templateId,
                     "templateRoles":[
                         {
-                            "email":"johnmarksjr@gmail.com",
+                            "email":"************@gmail.com", // Add real email addr here
                             "name":"James T Kirk",
                             "roleName":"Signer 1",
                             "tabs": {
