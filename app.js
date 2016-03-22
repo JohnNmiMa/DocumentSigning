@@ -2,9 +2,6 @@ var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ng
 
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-    .when("/", {
-        redirectTo: "/usage"
-    })
     .when("/usage", {
         templateUrl: "./views/usage/usage.html",
         controller: 'UsageCtrl'
@@ -21,10 +18,13 @@ var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ng
         templateUrl: "./views/echosign/echosign.html",
         controller: 'EchoSignCtrl'
     })
+    .when("/", {
+        redirectTo: "/usage"
+    })
     .otherwise({redirectTo: '/usage'});
 }])
 
-.controller('main', ['$rootScope', '$scope', '$location', function ($rootScope, $scope, $location) {
+.controller('main', ['$rootScope', '$scope', '$location', '$route', '$templateCache', function ($rootScope, $scope, $location, $route, $templateCache) {
     function init() {
     }
 
@@ -34,17 +34,8 @@ var docSignApp = angular.module('DocumentSigning', ['ngRoute', 'ngSanitize', 'ng
         $event.stopPropagation();
     };
 
-    $scope.usageView = function() {
-        $location.url('usage');
-    };
-    $scope.adminView = function() {
-        $location.url('admin');
-    };
-    $scope.docusignView = function() {
-        $location.url('docusign');
-    };
-    $scope.echosignView = function() {
-        $location.url('echosign');
+    $scope.gotoView = function(view) {
+        $location.url(view);
     };
 
     init();

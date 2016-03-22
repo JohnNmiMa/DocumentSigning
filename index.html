@@ -38,10 +38,10 @@
 
 		<section class="container tab-container">
             <uib-tabset active="active" class="tabs">
-                <uib-tab index="0" heading="Usage" select="usageView()"> </uib-tab>
-                <uib-tab index="1" heading="Admin" select="adminView()"> </uib-tab>
-                <uib-tab index="2" heading="DocuSign" select="docusignView()"> </uib-tab>
-                <uib-tab index="3" heading="EchoSign" select="echosignView()"> </uib-tab>
+                <uib-tab index="0" heading="Usage" select="gotoView('usage')"> </uib-tab>
+                <uib-tab index="1" heading="Admin" select="gotoView('admin')"> </uib-tab>
+                <uib-tab index="2" heading="DocuSign" select="gotoView('docusign')"> </uib-tab>
+                <uib-tab index="3" heading="EchoSign" select="gotoView('echosign')"> </uib-tab>
             </uib-tabset>
         </section>
 
@@ -68,6 +68,7 @@
             <script type="text/javascript" src="views/admin/admin.js"></script>
 			<script type="text/javascript" src="views/docusign/docusign.js"></script>
 			<script type="text/javascript" src="views/docusign/docusignLib.js"></script>
+            <script type="text/javascript" src="views/echosign/echosign.js"></script>
 			<script type="text/javascript" src="common/adminService.js"></script>
             <!-- endbuild -->
         </div>
